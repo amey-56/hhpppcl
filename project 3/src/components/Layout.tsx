@@ -1,7 +1,7 @@
 import React from 'react';
 import { Activity, BarChart3, FileText, DollarSign } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logoImage from '../ASSETS/Hindustan_Petroleum_Logo.svg';
+import logoImage from '../../ASSETS/Hindustan_Petroleum_Logo.svg';
 
 const navItems = [
   { path: '/', label: 'Introduction', icon: Activity },
