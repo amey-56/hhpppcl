@@ -18,16 +18,15 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        working-directory: ./project\ 3  # Add this line to specify the folder
+        working-directory: './project 3'  # Correct working directory
         run: npm install
 
       - name: Build project
-        working-directory: ./project\ 3  # Add this line to specify the folder
+        working-directory: './project 3'  # Correct working directory
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        working-directory: ./project\ 3  # Add this line to specify the folder
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: './project 3/dist'  # Correct publish directory
