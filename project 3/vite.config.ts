@@ -7,4 +7,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  // Add the base URL for GitHub Pages
+  base: '/hhpppcl/',  // Replace 'hhpppcl' with your repository name
 });
