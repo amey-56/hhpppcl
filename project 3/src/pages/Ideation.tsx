@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, MonitorDot, Gauge, AlertTriangle, TrendingUp } from 'lucide-react';
-import hpclLogo from '../ASSETS/Hindustan_Petroleum_Logo.svg (1).png';
+import hpclLogo from 'project 3/src/ASSETS/KK.png';
 
 const features = [
   {
