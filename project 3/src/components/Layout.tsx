@@ -1,9 +1,10 @@
 import React from 'react';
-import { Brain, Activity, BarChart3, FileText, DollarSign } from 'lucide-react';
+import { Activity, BarChart3, FileText, DollarSign } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import hpclLogo from '../ASSETS/Hindustan_Petroleum_Logo.svg (1).png';
 
 const navItems = [
-  { path: '/', label: 'Introduction', icon: Brain },
+  { path: '/', label: 'Introduction', icon: () => <img src={hpclLogo} alt="HPCL Logo" className="h-6 w-6" /> },
   { path: '/ideation', label: 'AI Dashboard', icon: Activity },
   { path: '/graphs', label: 'Analytics', icon: BarChart3 },
   { path: '/report', label: 'Report', icon: FileText },
@@ -19,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Brain className="h-8 w-8 text-green-600" />
+              <img src={hpclLogo} alt="HPCL CCUS Logo" className="h-8" />
               <span className="ml-2 text-xl font-semibold text-gray-900">HPCL CCUS</span>
             </div>
             <div className="flex space-x-8">
