@@ -1,93 +1,74 @@
-import React, { useState } from 'react';
-import { XCircle } from 'lucide-react';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import co2Image from '../ASSETS/CO2.png';
+import energyImage from '../ASSETS/POWER.png';
+import performanceImage from '../ASSETS/SYS.png';
+import impactImage from '../ASSETS/ENV.png';
+import costImage from '../ASSETS/COST.png';
 
-const graphs = [
+const features = [
   {
+    image: co2Image,
     title: 'CO₂ Capture Efficiency',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
-    description: 'Real-time monitoring of carbon capture efficiency across the system'
+    description: 'Real-time monitoring of carbon capture efficiency across the system.'
   },
   {
+    image: energyImage,
     title: 'Energy Consumption',
-    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1000',
-    description: 'Analysis of energy usage and optimization opportunities'
+    description: 'Analysis of energy usage and optimization opportunities.'
   },
   {
+    image: performanceImage,
     title: 'System Performance',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000',
-    description: 'Overall system performance metrics and trends'
+    description: 'Overall system performance metrics and trends.'
   },
   {
+    image: impactImage,
     title: 'Environmental Impact',
-    image: 'https://images.unsplash.com/photo-1623191312665-f973a9fe2e67?auto=format&fit=crop&q=80&w=1000',
-    description: 'Environmental impact assessment and carbon footprint reduction'
+    description: 'Environmental impact assessment and carbon footprint reduction.'
   },
   {
+    image: costImage,
     title: 'Cost Analysis',
-    image: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=1000',
-    description: 'Financial metrics and cost optimization analysis'
+    description: 'Financial metrics and cost optimization analysis.'
   }
 ];
 
-export default function Graphs() {
-  const [selectedGraph, setSelectedGraph] = useState(null);
-
+export default function Analytics() {
   return (
     <div className="min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Key Performance Metrics for CCUS
+            Comprehensive Analysis of System Metrics
           </h1>
-          <p className="text-xl text-gray-600">
-            Comprehensive analysis of system performance and efficiency metrics
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore various key performance indicators for enhanced optimization and monitoring.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {graphs.map((graph) => (
+          {features.map((feature) => (
             <div
-              key={graph.title}
-              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform"
-              onClick={() => setSelectedGraph(graph)}
+              key={feature.title}
+              className="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow"
             >
-              <img
-                src={graph.image}
-                alt={graph.title}
-                className="w-full h-48 object-cover"
-              />
+              <img src={feature.image} alt={feature.title} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{graph.title}</h3>
-                <p className="text-gray-600">{graph.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-600 mb-4">{feature.description}</p>
+                <a
+                  href="#"
+                  className="inline-flex items-center text-green-600 hover:text-green-700"
+                >
+                  Learn more
+                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {selectedGraph && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
-            <div className="p-4 border-b flex justify-between items-center">
-              <h3 className="text-xl font-semibold">{selectedGraph.title}</h3>
-              <button
-                onClick={() => setSelectedGraph(null)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <XCircle className="h-6 w-6" />
-              </button>
-            </div>
-            <div className="p-4">
-              <img
-                src={selectedGraph.image}
-                alt={selectedGraph.title}
-                className="w-full rounded-lg"
-              />
-              <p className="mt-4 text-gray-600">{selectedGraph.description}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
