@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, MonitorDot, Gauge, AlertTriangle, TrendingUp } from 'lucide-react';
+import hpclLogo from '../ASSETS/Hindustan_Petroleum_Logo.svg (1).png';
 
 const features = [
   {
@@ -40,10 +41,7 @@ export default function Ideation() {
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-16">
           <div className="aspect-video bg-gray-100 p-8 flex items-center justify-center">
-            <div className="text-center">
-              <MonitorDot className="h-16 w-16 text-green-600 mx-auto mb-4" />
-              <p className="text-gray-500">Dashboard visualization will be displayed here</p>
-            </div>
+            <img src={hpclLogo} alt="Hindustan Petroleum Logo" className="max-h-full" />
           </div>
         </div>
 
