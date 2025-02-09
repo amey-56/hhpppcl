@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import co2Image from '../ASSETS/CO2.png';
-import energyImage from '../ASSETS/POWER.png';
-import performanceImage from '../ASSETS/SYS.png';
-import impactImage from '../ASSETS/ENV.png';
-import costImage from '../ASSETS/COST.png';
+import co2Image from '../../ASSETS/C02.png';
+import energyImage from '../../ASSETS/POWER.png';
+import performanceImage from '../../ASSETS/SYS.png';
+import impactImage from '../../ASSETS/ENV.png';
+import costImage from '../../ASSETS/COST.png';
 
 const features = [
   {
