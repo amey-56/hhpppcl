@@ -1,7 +1,7 @@
 import React from 'react';
 import { Activity, BarChart3, FileText, DollarSign } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logoImage from '../../ASSETS/Hindustan_Petroleum_Logo.svg';
+import logoImage from '../ASSETS/hpcl.png';  // Updated path and image name
 
 const navItems = [
   { path: '/', label: 'Introduction', icon: Activity },
@@ -19,13 +19,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo and Title */}
+            {/* Logo */}
             <div className="flex items-center space-x-4">
               <img src={logoImage} alt="HPCL Logo" className="h-8 w-auto" />
               <span className="text-xl font-semibold text-gray-900">HPCL CCUS</span>
             </div>
 
-            {/* Navigation Items */}
+            {/* Navigation */}
             <div className="flex space-x-8">
               {navItems.map(({ path, label, icon: Icon }) => (
                 <Link
@@ -46,7 +46,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </nav>
 
-      {/* Main Content */}
       <main className="pt-20">{children}</main>
     </div>
   );
