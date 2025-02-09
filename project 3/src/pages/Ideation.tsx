@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, MonitorDot, Gauge, AlertTriangle, TrendingUp } from 'lucide-react';
-import hpclLogo from 'project 3/src/ASSETS/KK.png';
+import hpclLogo from '../ASSETS/KK.png';
 
 const features = [
   {
