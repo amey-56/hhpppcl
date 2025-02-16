@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DollarSign, AlertTriangle, CheckCircle, XCircle, ZoomIn } from 'lucide-react';
-import aImage from '../ASSETS/A.jpg';
+import aImage from '../ASSETS/A.png';
 import bImage from '../ASSETS/B.jpg';
 import cImage from '../ASSETS/C.jpg';
 import dImage from '../ASSETS/D.jpg';
