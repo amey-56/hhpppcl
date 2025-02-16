@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, X } from 'lucide-react';
 import co2Image from '../ASSETS/C02.png';
 import energyImage from '../ASSETS/POWER.png';
 import performanceImage from '../ASSETS/SYS.png';
@@ -35,6 +35,8 @@ const features = [
 ];
 
 export default function Analytics() {
+  const [zoomedImage, setZoomedImage] = useState(null);
+
   return (
     <div className="min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +55,12 @@ export default function Analytics() {
               key={feature.title}
               className="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow"
             >
-              <img src={feature.image} alt={feature.title} className="w-full h-48 object-cover" />
+              <img 
+                src={feature.image} 
+                alt={feature.title} 
+                className="w-full h-48 object-cover cursor-pointer" 
+                onClick={() => setZoomedImage(feature.image)}
+              />
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 mb-4">{feature.description}</p>
@@ -69,6 +76,21 @@ export default function Analytics() {
           ))}
         </div>
       </div>
+
+      {/* Zoom Modal */}
+      {zoomedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <div className="relative p-4 bg-white rounded-lg max-w-4xl shadow-xl">
+            <button
+              className="absolute top-2 right-2 text-gray-700 text-2xl hover:text-black"
+              onClick={() => setZoomedImage(null)}
+            >
+              <X />
+            </button>
+            <img src={zoomedImage} alt="Zoomed" className="max-w-full max-h-screen" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
