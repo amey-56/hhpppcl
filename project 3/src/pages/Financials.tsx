@@ -12,6 +12,27 @@ const financialMetrics = [
   { label: 'Payback Period', value: '2.9 years' }
 ];
 
+const solutions = [
+  {
+    title: 'Optimize Absorption Parameters',
+    description: 'Adjust solvent flow rate and temperature to improve efficiency',
+    impact: 'High',
+    timeToImplement: '2 hours'
+  },
+  {
+    title: 'Increase Stripper Pressure',
+    description: 'Gradually increase stripper pressure to optimal levels',
+    impact: 'Medium',
+    timeToImplement: '4 hours'
+  },
+  {
+    title: 'Replace Absorption Packing',
+    description: 'Schedule maintenance for packing replacement',
+    impact: 'Low',
+    timeToImplement: '24 hours'
+  }
+];
+
 const financialTables = [
   {
     title: 'Capital Expenditure Breakdown',
@@ -43,7 +64,6 @@ export default function Financials() {
     const timer = setTimeout(() => {
       setShowAlert(true);
     }, 1000);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -54,32 +74,6 @@ export default function Financials() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Financial Overview</h1>
           <p className="text-xl text-gray-600">Comprehensive financial analysis and system alerts</p>
         </div>
-
-        {showAlert && (
-          <div className="fixed inset-x-0 top-20 mx-auto max-w-2xl z-50 p-4">
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <div className="bg-red-600 px-4 py-2 flex items-center">
-                <AlertTriangle className="h-6 w-6 text-white" />
-                <span className="ml-2 text-lg font-semibold text-white">
-                  Critical Issue Identified!
-                </span>
-              </div>
-              <div className="p-4">
-                <p className="text-gray-600 mb-4">
-                  CO₂ capture efficiency has dropped below optimal levels. Immediate attention required.
-                </p>
-                <div className="mt-4 flex justify-center">
-                  <button
-                    onClick={() => setShowAlert(false)}
-                    className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
-                  >
-                    Acknowledge
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {financialMetrics.map((metric) => (
@@ -102,9 +96,9 @@ export default function Financials() {
                 className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-all"
                 onClick={() => setSelectedTable(table)}
               >
-                <div className="relative">
-                  <img src={table.image} alt={table.title} className="w-full h-48 object-cover" />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <div className="relative group">
+                  <img src={table.image} alt={table.title} className="w-full h-48 object-cover transition-transform duration-300 transform group-hover:scale-125" />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <ZoomIn className="h-8 w-8 text-white" />
                   </div>
                 </div>
