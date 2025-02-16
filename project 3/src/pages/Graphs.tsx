@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, X } from 'lucide-react';
+import { ArrowRight, X, ZoomIn } from 'lucide-react';
 import co2Image from '../ASSETS/C02.png';
 import energyImage from '../ASSETS/POWER.png';
 import performanceImage from '../ASSETS/SYS.png';
@@ -35,7 +35,7 @@ const features = [
 ];
 
 export default function Analytics() {
-  const [zoomedImage, setZoomedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className="min-h-screen py-12">
@@ -53,21 +53,19 @@ export default function Analytics() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-all"
+              onClick={() => setSelectedImage(feature)}
             >
-              <img 
-                src={feature.image} 
-                alt={feature.title} 
-                className="w-full h-48 object-cover cursor-pointer" 
-                onClick={() => setZoomedImage(feature.image)}
-              />
+              <div className="relative">
+                <img src={feature.image} alt={feature.title} className="w-full h-48 object-cover" />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <ZoomIn className="h-8 w-8 text-white" />
+                </div>
+              </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 mb-4">{feature.description}</p>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-green-600 hover:text-green-700"
-                >
+                <a href="#" className="inline-flex items-center text-green-600 hover:text-green-700">
                   Learn more
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -77,17 +75,19 @@ export default function Analytics() {
         </div>
       </div>
 
-      {/* Zoom Modal */}
-      {zoomedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="relative p-4 bg-white rounded-lg max-w-4xl shadow-xl">
-            <button
-              className="absolute top-2 right-2 text-gray-700 text-2xl hover:text-black"
-              onClick={() => setZoomedImage(null)}
-            >
-              <X />
-            </button>
-            <img src={zoomedImage} alt="Zoomed" className="max-w-full max-h-screen" />
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <div className="p-4 border-b flex justify-between items-center">
+              <h3 className="text-xl font-semibold">{selectedImage.title}</h3>
+              <button onClick={() => setSelectedImage(null)} className="text-gray-500 hover:text-gray-700">
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="p-4">
+              <img src={selectedImage.image} alt={selectedImage.title} className="w-full rounded-lg" />
+              <p className="mt-4 text-gray-600">{selectedImage.description}</p>
+            </div>
           </div>
         </div>
       )}
