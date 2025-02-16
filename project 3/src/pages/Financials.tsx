@@ -3,7 +3,7 @@ import { DollarSign, AlertTriangle, CheckCircle, XCircle, ZoomIn } from 'lucide-
 import aImage from '../ASSETS/A.png';
 import bImage from '../ASSETS/B.png';
 import cImage from '../ASSETS/C.png';
-import dImage from '../ASSETS/D.png';
+import dImage from '../ASSETS/E.png';
 import mascotImage from '../ASSETS/Mascot.jpg';
 
 const financialMetrics = [
