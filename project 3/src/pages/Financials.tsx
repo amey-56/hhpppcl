@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { DollarSign, AlertTriangle, CheckCircle, XCircle, ZoomIn } from 'lucide-react';
 import aImage from '../ASSETS/A.png';
-import bImage from '../ASSETS/B.jpg';
-import cImage from '../ASSETS/C.jpg';
-import dImage from '../ASSETS/D.jpg';
+import bImage from '../ASSETS/B.png';
+import cImage from '../ASSETS/C.png';
+import dImage from '../ASSETS/D.png';
 import mascotImage from '../ASSETS/Mascot.jpg';
 
 const financialMetrics = [
