@@ -73,8 +73,8 @@ export default function Financials() {
     <div className="min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Financial Overview</h1>
-          <p className="text-xl text-gray-600">Comprehensive financial analysis and system alerts</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">CCU Plant Real-time Analysis</h1>
+          <p className="text-xl text-gray-600">Comprehensive analysis and system alerts</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -82,7 +82,7 @@ export default function Financials() {
             <div key={metric.label} className="bg-white rounded-lg p-6 shadow-md">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-gray-600">{metric.label}</span>
-                <DollarSign className="h-5 w-5 text-green-600" />
+              
               </div>
               <div className="text-3xl font-bold text-gray-900">{metric.value}</div>
             </div>
