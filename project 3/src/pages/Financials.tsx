@@ -33,22 +33,22 @@ const financialTables = [
   {
     title: 'Capital Expenditure Breakdown',
     description: 'Detailed breakdown of initial investment and infrastructure costs',
-    image: '/ASSETS/A.jpg'
+    image: 'project 3/src/ASSETS/A.jpg'
   },
   {
     title: 'Operational Cost Analysis',
     description: 'Monthly operational expenses and maintenance costs',
-    image: '/ASSETS/B.jpg'
+    image: 'project 3/src/ASSETS/B.jpg'
   },
   {
     title: 'Revenue Projections',
     description: 'Five-year revenue forecast and carbon credit earnings',
-    image: '/ASSETS/C.jpg'
+    image: 'project 3/src/ASSETS/C.jpg'
   },
   {
     title: 'ROI Analysis',
     description: 'Comprehensive return on investment analysis and payback period calculation',
-    image: '/ASSETS/D.jpg'
+    image: 'project 3/src/ASSETS/D.jpg'
   }
 ];
 
