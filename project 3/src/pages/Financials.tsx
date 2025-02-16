@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DollarSign, AlertTriangle, CheckCircle, XCircle, ZoomIn } from 'lucide-react';
+import aImage from '../ASSETS/A.jpg';
+import bImage from '../ASSETS/B.jpg';
+import cImage from '../ASSETS/C.jpg';
+import dImage from '../ASSETS/D.jpg';
 
 const financialMetrics = [
   { label: 'Total Investment', value: '$2.5M' },
@@ -8,61 +12,31 @@ const financialMetrics = [
   { label: 'Payback Period', value: '2.9 years' }
 ];
 
-const solutions = [
-  {
-    title: 'Optimize Absorption Parameters',
-    description: 'Adjust solvent flow rate and temperature to improve efficiency',
-    impact: 'High',
-    timeToImplement: '2 hours'
-  },
-  {
-    title: 'Increase Stripper Pressure',
-    description: 'Gradually increase stripper pressure to optimal levels',
-    impact: 'Medium',
-    timeToImplement: '4 hours'
-  },
-  {
-    title: 'Replace Absorption Packing',
-    description: 'Schedule maintenance for packing replacement',
-    impact: 'Low',
-    timeToImplement: '24 hours'
-  }
-];
-
 const financialTables = [
   {
     title: 'Capital Expenditure Breakdown',
     description: 'Detailed breakdown of initial investment and infrastructure costs',
-    image: 'project 3/src/ASSETS/A.jpg'
+    image: aImage
   },
   {
     title: 'Operational Cost Analysis',
     description: 'Monthly operational expenses and maintenance costs',
-    image: 'project 3/src/ASSETS/B.jpg'
+    image: bImage
   },
   {
     title: 'Revenue Projections',
     description: 'Five-year revenue forecast and carbon credit earnings',
-    image: 'project 3/src/ASSETS/C.jpg'
+    image: cImage
   },
   {
     title: 'ROI Analysis',
     description: 'Comprehensive return on investment analysis and payback period calculation',
-    image: 'project 3/src/ASSETS/D.jpg'
+    image: dImage
   }
 ];
 
 export default function Financials() {
-  const [showAlert, setShowAlert] = useState(false);
   const [selectedTable, setSelectedTable] = useState(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowAlert(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="min-h-screen py-12">
