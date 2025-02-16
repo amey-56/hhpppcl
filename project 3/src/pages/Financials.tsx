@@ -137,6 +137,11 @@ export default function Financials() {
                     </div>
                   ))}
                 </div>
+                <div className="mt-4 flex justify-center">
+                  <button onClick={() => setShowAlert(false)} className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium">
+                    Acknowledge
+                  </button>
+                </div>
               </div>
             </div>
           </div>
