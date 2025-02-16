@@ -37,23 +37,23 @@ const solutions = [
 
 const financialTables = [
   {
-    title: 'Capital Expenditure Breakdown',
-    description: 'Detailed breakdown of initial investment and infrastructure costs',
+    title: 'Purity of CO2 Captured',
+    description: 'Understand how much of C02 we have captured',
     image: aImage
   },
   {
-    title: 'Operational Cost Analysis',
-    description: 'Monthly operational expenses and maintenance costs',
+    title: 'Energy Requirement',
+    description: 'Calculation of energy required/ tonne C02 Captured',
     image: bImage
   },
   {
-    title: 'Revenue Projections',
-    description: 'Five-year revenue forecast and carbon credit earnings',
+    title: 'Solvent Makeup Rate',
+    description: 'Indepth Analysis on usage of Solvent ',
     image: cImage
   },
   {
-    title: 'ROI Analysis',
-    description: 'Comprehensive return on investment analysis and payback period calculation',
+    title: 'Compression Pressure',
+    description: 'Total Pressure used',
     image: dImage
   }
 ];
