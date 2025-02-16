@@ -7,10 +7,10 @@ import dImage from '../ASSETS/D.jpg';
 import mascotImage from '../ASSETS/Mascot.jpg';
 
 const financialMetrics = [
-  { label: 'Total Investment', value: '$2.5M' },
-  { label: 'Annual Savings', value: '$850K' },
-  { label: 'ROI', value: '34%' },
-  { label: 'Payback Period', value: '2.9 years' }
+  { label: 'Purity of Captured C02', value: '99%' },
+  { label: 'Energy Requirement', value: '2.5-3.0 J' },
+  { label: 'Solvent Makeup Rate', value: '0.2 kg' },
+  { label: 'Compression Pressure', value: '100-150 bar' }
 ];
 
 const solutions = [
