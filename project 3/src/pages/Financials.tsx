@@ -90,7 +90,7 @@ export default function Financials() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Financial Tables</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Analysis with Real Time Insights</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {financialTables.map((table) => (
               <div
